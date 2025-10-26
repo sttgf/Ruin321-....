@@ -106,6 +106,13 @@
             color: #555;
         }
         
+        .server-ips {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
         .server-ip {
             background: white;
             padding: 15px;
@@ -116,13 +123,13 @@
             transition: all 0.3s;
             font-weight: 500;
             color: #2c3e50;
-            margin-top: 15px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         .server-ip:hover {
             background: #f1f8ff;
             border-color: #3498db;
+            transform: translateY(-2px);
         }
         
         .rules {
@@ -253,18 +260,19 @@
                 </div>
             </div>
             
-            <div class="server-ip" onclick="copyToClipboard(this, 'xy.frp.one:15789')">
-                点击复制服务器地址1
-            </div>
-        </div>
-
-            <div class="server-ip" onclick="copyToClipboard(this, 'ld.frp.one:40278')">
-                点击复制服务器地址2
-            </div>
-        </div>
-  
-            <div class="server-ip" onclick="copyToClipboard(this, '26.195.7.82')">
-                点击复制服务器地址3
+            <h2 style="margin-top: 25px;"><i class="fas fa-plug"></i> 服务器地址</h2>
+            <p>点击以下任一地址复制到剪贴板：</p>
+            
+            <div class="server-ips">
+                <div class="server-ip" onclick="copyToClipboard(this, 'xy.frp.one:15789')">
+                    服务器地址1: xy.frp.one:15789
+                </div>
+                <div class="server-ip" onclick="copyToClipboard(this, 'ld.frp.one:40278')">
+                    服务器地址2: ld.frp.one:40278
+                </div>
+                <div class="server-ip" onclick="copyToClipboard(this, '26.195.7.82')">
+                    服务器地址3: 26.195.7.82
+                </div>
             </div>
         </div>
         
