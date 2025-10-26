@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruin321的奇妙生存服务器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .version-info {
+            background: #f1f8ff;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 10px 0;
+            border: 1px solid #d1e3ff;
+            color: #2c80ff;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: #555;
+        }
+        
+        .server-ip {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .server-ip:hover {
+            background: #f1f8ff;
+            border-color: #3498db;
+        }
+        
+        .rules {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .rules li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .rules li:last-child {
+            border-bottom: none;
+        }
+        
+        .rules li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            border: 1px solid #e1e8ed;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            background: #f1f8ff;
+            transform: translateY(-2px);
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        a i {
+            margin-right: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-item {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ruin321的奇妙生存服务器</h1>
+            <div class="subtitle">开启你的奇妙生存之旅</div>
+            <div class="version-info">
+                <i class="fas fa-check-circle"></i> 基岩版可用 | 服务器版本: 1.21.10
+            </div>
+        </header>
+        
+        <div class="section">
+            <h2><i class="fas fa-server"></i> 服务器信息</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">IP地址</div>
+                    <div class="info-value">xy.frp.one:15789</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">内网穿透</div>
+                    <div class="info-value">ChmlFrp</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">节点</div>
+                    <div class="info-value">湖北襄阳电信-2</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">服务器CPU</div>
+                    <div class="info-value">Intel(R) Celeron(R) N5095 @ 2.00GHz</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">服务器磁盘</div>
+                    <div class="info-value">SSD HEORIADY M.2 1TB</div>
+                </div>
+            </div>
+            
+            <div class="server-ip" onclick="copyToClipboard(this, 'xy.frp.one:15789')">
+                点击复制服务器地址1
+            </div>
+        </div>
+
+            <div class="server-ip" onclick="copyToClipboard(this, 'ld.frp.one:40278')">
+                点击复制服务器地址2
+            </div>
+        </div>
+  
+            <div class="server-ip" onclick="copyToClipboard(this, '26.195.7.82')">
+                点击复制服务器地址3
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-gavel"></i> 服务器规则</h2>
+            <ul class="rules">
+                <li>不可开挂</li>
+                <li>可以适当的开矿透（没人管你.. 只要别乱炫耀即可）</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-link"></i> 联系我们</h2>
+            <div class="contact">
+                <div class="contact-item">
+                    <a href="https://qm.qq.com/cgi-bin/qm/qr?k=773902357" target="_blank">
+                        <i class="fab fa-qq"></i> QQ群: 773902357
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://space.bilibili.com/3494354173823237" target="_blank">
+                        <i class="fab fa-bilibili"></i> Bilibili频道
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>感谢您对Ruin321的奇妙生存服务器的关注！</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(element, text) {
+            // 创建临时textarea元素
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            
+            // 选择并复制文本
+            textarea.select();
+            document.execCommand('copy');
+            
+            // 移除临时元素
+            document.body.removeChild(textarea);
+            
+            // 显示复制成功提示
+            const originalText = element.textContent;
+            element.textContent = '✓ 已复制服务器地址!';
+            element.style.background = '#e8f5e9';
+            element.style.color = '#2e7d32';
+            setTimeout(() => {
+                element.textContent = originalText;
+                element.style.background = '';
+                element.style.color = '';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
